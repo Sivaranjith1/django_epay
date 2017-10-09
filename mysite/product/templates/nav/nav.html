@@ -2,22 +2,133 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Epay-{% block title %}{% endblock %}</title>
+    <title>Epay-<!--{% block title %}{% endblock %}--></title>
 
-    {% load static %}
+    <!--{% load static %}-->
     <link rel="stylesheet" type="text/css" href="{% static 'product/nav.css' %}" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    {% block head %}{% endblock %}
+	
+	<link rel="stylesheet" type="text/css" href="html\nav.css" />
+    <!--{% block head %}{% endblock %}-->
 </head>
 <body>
 <div class="container">
     <div class="nav">
+		<div class="w3-bar nav-dark-gray nav-white-color">
+		  <a href="#" class="w3-bar-item w3-button">Home</a>
+		  <div class="w3-dropdown-hover w3-hide-small">
+			  <button class="w3-button">Category</button>
+			  <div class="w3-dropdown-content w3-bar-block w3-card-4">
+				<a href="#" class="w3-bar-item w3-button">Elektronic</a>
+				<a href="#" class="w3-bar-item w3-button">Fashion</a>
+				<a href="#" class="w3-bar-item w3-button">Toys</a>
+			  </div>
+			</div>
+			
+			<a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-gray">Login/Signup</a>
+			
+			<div class="searchbar w3-hide-small w3-right">
+				<input type="text" class="w3-bar-item w3-input nav-gray nav-white-color" placeholder="Search..">
+				<a href="#" class="w3-bar-item w3-button nav-yellow">Go</a>
+			</div>
+			
+			
+								
+		  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+		</div>
 
+		<div id="demo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+			<a href="#" class="w3-bar-item w3-button">Link 1</a>
+			<a href="#" class="w3-bar-item w3-button">Link 2</a>
+			<a href="#" class="w3-bar-item w3-button">Link 3</a>
+			<input type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Search..">
+			<button class="w3-bar-item w3-button nav-yellow w3-mobile">Go</button>
+		</div>
     </div>
 
-    <div class="footer">
+    <!--{% block body %}{% endblock %}-->
+	<div class="temp">
+		<div class="w3-content w3-display-container" style="max-width:8000px">
+		<img class="mySlides" src="img/img_nature_wide.jpg" style="width:100%">
+		<img class="mySlides" src="img/img_fjords_wide.jpg" style="width:100%">
+		<img class="mySlides" src="img/img_mountains_wide.jpg" style="width:100%">
+		<img class="mySlides" src="img/img_lights_wide.jpg" style="width:100%">
+		
+		<div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+		<div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+		<div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+		
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+		<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+		</div>
+		
+		
+		
+		
+		
+		<script>
+			var slideIndex = 1;
+			carousel();
+			showDivs(slideIndex);
+
+			function carousel() {
+				/*var i;
+				var x = document.getElementsByClassName("mySlides");
+				for (i = 0; i < x.length; i++) {
+				  x[i].style.display = "none"; 
+				}
+				slideIndex++;
+				if (slideIndex > x.length) {slideIndex = 1} 
+				x[slideIndex-1].style.display = "block"; */
+				plusDivs(1);
+				setTimeout(carousel, 6000); 
+			}
+			
+			function plusDivs(n) {
+			  showDivs(slideIndex += n);
+			}
+
+			function currentDiv(n) {
+			  showDivs(slideIndex = n);
+			}
+
+			function showDivs(n) {
+			  var i;
+			  var x = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("demo");
+			  if (n > x.length) {slideIndex = 1}    
+			  if (n < 1) {slideIndex = x.length}
+			  for (i = 0; i < x.length; i++) {
+				 x[i].style.display = "none";  
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				 dots[i].className = dots[i].className.replace(" w3-white", "");
+			  }
+			  x[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " w3-white";
+			}
+		</script>
+		
+	</div>
+	
+	</div>
+
+    <div class="footer nav-gray nav-white-color">
         <p><br />Copyright  (C) Epay<br /></p>
     </div>
+	
+	<script>
+		function myFunction() {
+			var x = document.getElementById("demo");
+			if (x.className.indexOf("w3-show") == -1) {
+				x.className += " w3-show";
+			} else { 
+				x.className = x.className.replace(" w3-show", "");
+			}
+		}
+	</script>
 </div>
 </body>
 </html>

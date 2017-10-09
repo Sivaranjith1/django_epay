@@ -1,0 +1,45 @@
+.nav-gray {
+	background-color: #737372;
+}
+
+.nav-yellow {
+	background-color: #D99A25;
+}
+
+.nav-white {
+	background-color: #D9D9D9;
+}
+
+.nav-dark-gray {
+	background-color: #404040;
+}
+
+.nav-black {
+	background-color: #262626;
+}
+
+.nav-white-color {
+	color: #D9D9D9;
+}
+
+.footer {
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height: 60px;
+	padding: 0px;
+}
+
+.mySlides {
+	display:none
+	}
+	
+.w3-left, .w3-right, .w3-badge {
+	cursor:pointer
+	}
+	
+.w3-badge {
+	height:13px;
+	width:13px;
+	padding:0
+	}
